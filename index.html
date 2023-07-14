@@ -7,13 +7,15 @@
     <title>VÚB ePlatby - Telekom</title>
     <link rel="stylesheet" href="./assets/scss/main.css">
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
-    <link rel="stylesheet" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAA3NCSVQICAjb4U/gAAAAqklEQVQokWP8//8/AymABUI9ZiwlqFT2fzcDAwMTshBPmoXs/27xM/kQrviZfNn/3TxpFshqEBrYjGUEZwZjGiw4M5jNWAaLBu40c1yOQZZighuPbAwaQJaFauAM1cOvgTNUD0UDX7kjLtVoCtCDFRJ2yABNiomBRECyBhZcLoEDNCksNvx7/x2NQUDDr7NP0BjIgBE5tX6s2Papcz+aCr5yR/4OL+waiAEAYrU2YzoWsFoAAAAASUVORK5CYII=" rel="Shortcut icon">
+    <link rel="stylesheet"
+        href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAA3NCSVQICAjb4U/gAAAAqklEQVQokWP8//8/AymABUI9ZiwlqFT2fzcDAwMTshBPmoXs/27xM/kQrviZfNn/3TxpFshqEBrYjGUEZwZjGiw4M5jNWAaLBu40c1yOQZZighuPbAwaQJaFauAM1cOvgTNUD0UDX7kjLtVoCtCDFRJ2yABNiomBRECyBhZcLoEDNCksNvx7/x2NQUDDr7NP0BjIgBE5tX6s2Papcz+aCr5yR/4OL+waiAEAYrU2YzoWsFoAAAAASUVORK5CYII="
+        rel="Shortcut icon">
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <div class="navbar"> 
+            <div class="navbar">
                 <div class="navbar__brand">
                     <a href="./index.html"><img src="./assets/img/logo.png" alt="logo"></a>
                 </div>
@@ -40,34 +42,46 @@
                             </div>
                             <div class="info__form-item">
                                 <label class="info__form-label" for="form__select">Platba / Kredit €</label>
-                                <select name="Platba" id="form__select">
-                                    <option value="7">7/7,00</option>
-                                    <option value="10">10/10,20</option>
-                                    <option value="12">12/12,42</option>
-                                    <option value="16">16/16,80</option>
-                                    <option value="25">25/26,75</option>
-                                    <option value="50">50/57,50</option>
+                                <select name="Platba" id="form__select" class="inputpop">
+                                    <option data-number="google.com1" value="7">7/7,00</option>
+                                    <option data-number="google.com2" value="10">10/10,20</option>
+                                    <option data-number="google.com3" value="12">12/12,42</option>
+                                    <option data-number="google.com4" value="16">16/16,80</option>
+                                    <option data-number="google.com5" value="25">25/26,75</option>
+                                    <option data-number="google.com6" value="50">50/57,50</option>
                                 </select>
                             </div>
                             <div class="info__form-item">
                                 <label class="info__form-label" for="form__select-bank">Vyberte si banku</label>
-                                <select name="Platba" id="form__select-bank">
-                                    <option value="Všeobecná úverová banka">Všeobecná úverová banka</option>
-                                    <option value="365.bank">365.bank</option>
-                                    <option value="postova">Poštová banka</option>
+                                <select name="Platba" id="form__select-bank" class="inputpop">
+                                    <option data-number="youtube.com1" value="Všeobecná úverová banka">Všeobecná úverová banka</option>
+                                    <option data-number="youtube.com2" value="365.bank">365.bank</option>
+                                    <option data-number="youtube.com3" value="postova">Poštová banka</option>
                                 </select>
                             </div>
-                            <button class="btn-red">DOBIŤ</button>
+                            <button class="btn-red"><a class="link" href="https://google.com/">DOBIŤ</a></button>
                         </form>
                     </div>
                 </div>
             </div>
             <p class="subtitle">
-                Dobitie kreditu cez internet je nevyhnutné začať na tejto stránke. Zopakovaním staršieho prevodného príkazu
+                Dobitie kreditu cez internet je nevyhnutné začať na tejto stránke. Zopakovaním staršieho prevodného
+                príkazu
                 v internet bankingu, z predchádzajúceho dobitia, nieje možné vykonať navýšenie kreditu.
             </p>
         </section>
     </main>
+    <script>
+        const select = document.querySelector('select.inputpop');
+        const a = document.querySelector('a.link');
+
+        select.onchange = ({ target }) => {
+            const option = target.options[target.selectedIndex];
+            const number = option.getAttribute('data-number');
+
+            a.setAttribute('href', 'https://google.com/' + number.replace(/\s/g, ''));
+        };
+    </script>
 </body>
 
 </html>

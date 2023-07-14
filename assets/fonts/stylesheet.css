@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Tele-GroteskNor';
+    src: url('Tele-Grotesk-Norm.eot');
+    src: local('Tele-GroteskNor'), local('Tele-Grotesk-Norm'),
+        url('Tele-Grotesk-Norm.eot?#iefix') format('embedded-opentype'),
+        url('Tele-Grotesk-Norm.woff2') format('woff2'),
+        url('Tele-Grotesk-Norm.woff') format('woff'),
+        url('Tele-Grotesk-Norm.ttf') format('truetype'),
+        url('Tele-Grotesk-Norm.svg#Tele-Grotesk-Norm') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
